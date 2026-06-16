@@ -1,16 +1,63 @@
-# React + Vite
+# HAAT_BAZAR
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+HAAT_BAZAR is a React + Vite e-commerce storefront UI built with modern libraries and styling tools. It is designed as a landing page for product categories, flash sales, and featured items.
 
-Currently, two official plugins are available:
+## Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 with functional components and JSX
+- Vite for fast development and production builds
+- Tailwind CSS for utility-first styling
+- Material UI (`@mui/material`) for reusable UI controls
+- React Router for page routing
+- React Icons for scalable iconography
+- Simple e-commerce category and flash sale layout
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `src/App.jsx` — main router setup
+- `src/pages/Home.jsx` — home page content and sections
+- `src/layout/RootLayout.jsx` — shared page layout wrapper
+- `src/components` — reusable UI components
+- `src/assets` — image and asset files
 
-## Expanding the ESLint configuration
+## Setup and Usage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Preview production build locally:
+
+```bash
+npm run build
+npm run preview
+```
+
+Run ESLint:
+
+```bash
+npm run lint
+```
+
+## Dependencies
+
+- `react`
+- `react-dom`
+- `react-router`
+- `@mui/material`
+- `@emotion/react`
+- `@emotion/styled`
+- `tailwindcss`
+- `react-icons`
+
+## Notes
+
+This repository currently provides the UI and routing structure for the storefront. You can extend it with product data, shopping cart state, API integration, and authentication as needed.
