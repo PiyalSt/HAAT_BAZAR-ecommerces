@@ -2,6 +2,8 @@
 
 HAAT_BAZAR is a React + Vite e-commerce storefront UI built with modern libraries and styling tools. It is designed as a landing page for product categories, flash sales, and featured items.
 
+**Live Demo:** [https://haat-bazar-ecommerces.vercel.app/](https://haat-bazar-ecommerces.vercel.app/)
+
 ## Key Features
 
 - React 19 with functional components and JSX
