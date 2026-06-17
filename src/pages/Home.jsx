@@ -13,14 +13,7 @@ import {
   IoWatchOutline,
 } from "react-icons/io5";
 import { CiHeadphones } from "react-icons/ci";
-import EnhanceImg from "../assets/enhance.png";
-import F1 from "../assets/f-1.png";
-import F2 from "../assets/f-2.png";
-import F3 from "../assets/f-3.png";
-import F4 from "../assets/f-4.png";
-import services from "../assets/Services.png";
-import services1 from "../assets/Services (1).png";
-import services2 from "../assets/Services (2).png";
+import assets from "../assets/assets";
 
 const Home = () => {
   return (
@@ -216,7 +209,7 @@ const Home = () => {
           </div>
 
           <div className="mt-30 w-full flex items-center justify-center">
-            <img className="w-full" src={EnhanceImg} alt="Enhance" />
+            <img className="w-full" src={assets.bestProduct} alt="Enhance" />
           </div>
         </section>
 
@@ -261,7 +254,7 @@ const Home = () => {
               <div className="w-full h-150 rounded-sm relative group overflow-hidden cursor-pointer">
                 <img
                   className="w-full h-full object-cover rounded-sm"
-                  src={F1}
+                  src={assets.product1}
                   alt=""
                 />
                 <div className="absolute group-hover:bottom-8 left-8 flex flex-col gap-4 duration-300">
@@ -278,7 +271,7 @@ const Home = () => {
               </div>
               <div className="w-full h-150 flex gap-5 flex-col">
                 <div className="w-full h-70 rounded-sm relative group overflow-hidden cursor-pointer">
-                  <img className="w-full h-70 rounded-sm" src={F2} alt="" />
+                  <img className="w-full h-70 rounded-sm" src={assets.product2} alt="" />
                   <div className="absolute group-hover:bottom-8 left-8 flex flex-col gap-4 duration-300">
                     <h4 className="font-poppins font-semibold text-2xl text-text">
                       PlayStation 5
@@ -293,7 +286,7 @@ const Home = () => {
                 </div>
                 <div className="w-full h-74 flex gap-8">
                   <div className="w-full relative group overflow-hidden cursor-pointer">
-                    <img className="w-full" src={F3} alt="" />
+                    <img className="w-full" src={assets.product3} alt="" />
                     <div className="absolute group-hover:bottom-8 left-8 flex flex-col gap-4 duration-300">
                       <h4 className="font-poppins font-semibold text-2xl text-text">
                         PlayStation 5
@@ -307,7 +300,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="w-full relative group overflow-hidden cursor-pointer">
-                    <img className="w-full" src={F4} alt="" />
+                    <img className="w-full" src={assets.product4} alt="" />
                     <div className="absolute group-hover:bottom-8 left-8 flex flex-col gap-4 duration-300">
                       <h4 className="font-poppins font-semibold text-2xl text-text">
                         PlayStation 5
@@ -329,21 +322,21 @@ const Home = () => {
         <section id="services-card" className="my-32">
           <div className="flex justify-between items-center">
             <div className="flex flex-col items-center gap-6">
-                <img src={services} alt="services" />
+                <img src={assets.ServicesOne} alt="services" />
               <div className="text-center">
                 <h1 className="font-poppins font-semibold text-xl">FREE AND FAST DELIVERY</h1>
                 <p className="font-poppins font-normal text-sm">Free delivery for all orders over $140</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-6">
-                <img src={services1} alt="services" />
+                <img src={assets.ServicesTwo} alt="services" />
               <div className="text-center">
                 <h1 className="font-poppins font-semibold text-xl">24/7 CUSTOMER SERVICE</h1>
                 <p className="font-poppins font-normal text-sm">Friendly 24/7 customer support</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-6">
-                <img src={services2} alt="services" />
+                <img src={assets.ServicesThree} alt="services" />
               <div className="text-center">
                 <h1 className="font-poppins font-semibold text-xl">MONEY BACK GUARANTEE</h1>
                 <p className="font-poppins font-normal text-sm">We reurn money within 30 days</p>

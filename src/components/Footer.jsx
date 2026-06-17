@@ -1,9 +1,9 @@
 import React from 'react'
 import { VscSend } from 'react-icons/vsc'
-import payImage from '../assets/pay-img.png'
 import { ImFacebook, ImTwitter } from 'react-icons/im'
 import { FaInstagram, FaLinkedin } from 'react-icons/fa6'
 import { Button } from '@mui/material'
+import assets from '../assets/assets'
 
 const Footer = () => {
   return (
@@ -47,7 +47,7 @@ const Footer = () => {
                         <h4 className='font-poppins font-medium text-xl text-text mb-2'>Download App</h4>
                         <p className='font-poppins font-medium text-sm text-text'>Save $3 with App New User Only</p>
                         <div>
-                            <img className='w-full' src={payImage} alt="" />
+                            <img className='w-full' src={assets.payImg} alt="" />
                         </div>
                         <div className='flex gap-1 mt-4 list-none'>
                             <Button sx={{color: 'gray'}}>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaRegEye, FaRegHeart, FaStar } from 'react-icons/fa6'
-import Product01 from '../assets/01-product.png'
 import { Button, IconButton } from '@mui/material'
+import assets from '../assets/assets'
 
 const Card = () => {
   return (
@@ -19,7 +19,7 @@ const Card = () => {
                     </IconButton>
                 </div>
 
-                <img src={Product01} alt="Product 01" />
+                <img src={assets.products} alt="Product 01" />
 
                 <div className='w-full absolute -bottom-10 group-hover:bottom-0 transition-all duration-300'>
                     <Button sx={{ backgroundColor: 'black', color: 'white', fontFamily: 'Poppins', fontWeight: 'medium', fontSize: '16px', px: 4, width: '100%', borderRadius: '4px' }}>Add To Card</Button>
