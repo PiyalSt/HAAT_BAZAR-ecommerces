@@ -2,7 +2,7 @@ import React from 'react'
 import { VscSend } from 'react-icons/vsc'
 import { ImFacebook, ImTwitter } from 'react-icons/im'
 import { FaInstagram, FaLinkedin } from 'react-icons/fa6'
-import { Button } from '@mui/material'
+import { Button, IconButton } from '@mui/material'
 import assets from '../assets/assets'
 
 const Footer = () => {
@@ -17,7 +17,9 @@ const Footer = () => {
                         <p className='font-poppins font-normal text-base text-secondary'>Get 10% off your first order</p>
                         <div className='w-55 flex items-center justify-between text-secondary border-2 py-2 px-4 rounded-sm mt-4'>
                             <input className='w-full font-poppins font-normal text-base text-secondary outline-none' type="text" placeholder='Enter your email' />
-                            <VscSend className='text-xl' />
+                            <IconButton sx={{color: 'white'}}>
+                                <VscSend className='text-xl' />
+                            </IconButton>
                         </div>
                     </div>
                     <div className='w-full flex justify-evenly mx-4'>
@@ -50,18 +52,18 @@ const Footer = () => {
                             <img className='w-full' src={assets.payImg} alt="" />
                         </div>
                         <div className='flex gap-1 mt-4 list-none'>
-                            <Button sx={{color: 'gray'}}>
+                            <IconButton sx={{color: 'gray'}}>
                                 <li><ImFacebook className='text-2xl text-text cursor-pointer' /></li>
-                            </Button>
-                            <Button sx={{color: 'gray'}}>
+                            </IconButton>
+                            <IconButton sx={{color: 'gray'}}>
                                 <li><ImTwitter className='text-2xl text-text cursor-pointer' /></li>
-                            </Button>
-                            <Button sx={{color: 'gray'}}>
+                            </IconButton>
+                            <IconButton sx={{color: 'gray'}}>
                                 <li><FaInstagram className='text-2xl text-text cursor-pointer' /></li>
-                            </Button>
-                            <Button sx={{color: 'gray'}}>
+                            </IconButton>
+                            <IconButton sx={{color: 'gray'}}>
                                 <li><FaLinkedin className='text-2xl text-text cursor-pointer' /></li>
-                            </Button>
+                            </IconButton>
                         </div>
                     </div>
                 </div>

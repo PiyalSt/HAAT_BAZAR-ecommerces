@@ -9,7 +9,7 @@ import product1 from '../assets/product-1.png'
 import product2 from '../assets/product-2.png'
 import product3 from '../assets/product-3.png'
 import product4 from '../assets/product-4.png'
-
+import loginImg from '../assets/loginImg.png'
 
 const assets = {
     products,
@@ -23,6 +23,7 @@ const assets = {
     product2,
     product3,
     product4,
+    loginImg,
 }
 
 

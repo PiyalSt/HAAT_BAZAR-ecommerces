@@ -1,11 +1,12 @@
+import { Button } from '@mui/material'
 import React from 'react'
 
-const CommonButton = ({text}) => {
+const CommonButton = ({text, className}) => {
   return (
     <>
-        <div>
-            <button className='bg-secondary-2 text-white font-poppins font-medium text-base px-8 py-3 rounded-sm cursor-pointer'>{text}</button>   
-        </div>
+      <div>
+        <Button sx={{backgroundColor: '#DB4444', color: 'white', padding: '12px 32px'}}>{text}</Button>
+      </div>
     </>
   )
 }
