@@ -13,10 +13,10 @@ import {
   IoWatchOutline,
 } from "react-icons/io5";
 import { CiHeadphones } from "react-icons/ci";
-import assets from "../assets/assets";
+import assets, { products } from "../assets/assets";
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import SliderLib from "react-slick";
 
 const Home = () => {
@@ -183,14 +183,13 @@ const Home = () => {
           </div>
 
           <div className="mt-20 flex items-center justify-between flex-wrap">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {
+              products.filter((item) => item.discount).map((item) => (
+                <div key={item.id}>
+                  <Card isDiscount='true' discount={`${item.discount}%`} productImg={item.image} productName={item.name} newProductPrice={`$${item.price - (item.price * (item.discount / 100)).toFixed(2)}`} productPrice={`$${item.price}`} rating={item.rating} />
+                </div>
+              ))
+            }
           </div>
 
           <div className="flex justify-center mt-10">
@@ -253,7 +252,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section id="this-month" className="my-32">
+        <section id="bestProduct" className="my-32">
           <div className="flex flex-col gap-16">
             <div className="flex justify-between items-end">
               <Title
@@ -263,10 +262,13 @@ const Home = () => {
               <CommonButton text={"View All"} />
             </div>
             <div className="flex justify-between items-center">
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+              {
+                products.filter((item) => item.bestProduct === 'best').map((item)=> (
+                  <div key={item.id}>
+                    <Card productImg={item.image} productName={item.name} newProductPrice={`$${item.price - (item.price * (item.discount / 100)).toFixed(2)}`} productPrice={`$${item.price}`} rating={item.rating} />
+                  </div>
+                ))
+              }
             </div>
           </div>
 
@@ -292,14 +294,13 @@ const Home = () => {
             </div>
           </div>
           <div className="flex justify-between items-center flex-wrap gap-y-16 mt-16">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {
+              products.filter((item) => item.discount).map((item) => (
+                <div key={item.id}>
+                  <Card productImg={item.image} productName={item.name} newProductPrice={`$${item.price - (item.price * (item.discount / 100)).toFixed(2)}`} productPrice={`$${item.price}`} rating={item.rating} />
+                </div>
+              ))
+            }
           </div>
 
           <div className="flex justify-center items-center mt-12">

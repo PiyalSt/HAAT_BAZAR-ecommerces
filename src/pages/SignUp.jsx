@@ -4,24 +4,31 @@ import { TextField } from '@mui/material'
 import CommonButton from '../components/CommonButton'
 import { FcGoogle } from 'react-icons/fc'
 import { toast, ToastContainer } from 'react-toastify'
+import { Link } from 'react-router'
 
 const SignUp = () => {
 
     const [name, setName] = useState('')
+    const [nameError, setNameError] = useState(false)
     const [email, setEmail] = useState('')
+    const [emailError, setEmailError] = useState(false)
     const [password, setPassword] = useState('')
+    const [passwordError, setPasswordError] = useState(false)
 
     const handleSignup = () => {
         if(!name) {
             toast.error('Please enter your name')
+            setNameError(true)
             return
         }
         if(!email) {
             toast.error('Please enter your email')
+            setEmailError(true)
             return
         }
         if(!password) {
             toast.error('Please enter your password')
+            setPasswordError(true)
             return
         }
         toast.success('Create your account Successfully')
@@ -42,21 +49,33 @@ const SignUp = () => {
                         </div>
                         <div className='flex flex-col gap-6'>
                             <TextField 
-                            onChange={(e)=> setName(e.target.value)}
+                            error={nameError}
+                            onChange={(e)=> {
+                                setName(e.target.value)
+                                setNameError(false)
+                            }}
                             value={name}
                             sx={{color: 'red'}} 
                             variant='standard' 
                             label='Name' />
 
                             <TextField 
-                            onChange={(e)=> setEmail(e.target.value)}
+                            error={emailError}
+                            onChange={(e)=> {
+                                setEmail(e.target.value)
+                                setEmailError(false)
+                            }}
                             value={email}
                             sx={{color: 'red'}} 
                             variant='standard' 
                             label='Email or Phone Number' />
 
                             <TextField 
-                            onChange={(e)=> setPassword(e.target.value)}
+                            error={passwordError}
+                            onChange={(e)=> {
+                                setPassword(e.target.value)
+                                setPasswordError(false)
+                            }}
                             value={password}
                             sx={{color: 'black'}} 
                             variant='standard' 
@@ -75,7 +94,11 @@ const SignUp = () => {
                                 <FcGoogle />
                                 <p>Sign up with Google</p>
                             </button>
-                            <p className='font-poppins font-normal text-base text-secondary-2 cursor-pointer'>Forget Password?</p>
+                            <p className='font-poppins font-normal text-base text-text-2 cursor-pointer'>Already have account? 
+                            <Link to={'/login'}>
+                                <span className='hover:underline'>Log in</span>
+                            </Link>
+                            </p>
                         </div>
                     </div>
                 </div>

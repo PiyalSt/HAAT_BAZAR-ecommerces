@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import RootLayout from './layout/RootLayout'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
+import Products from './pages/Products'
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path='login' element={<Login />} />
         <Route path='signup' element={<SignUp />} />
+        <Route path='products' element={<Products />} />
       </Route>
     )
   )
