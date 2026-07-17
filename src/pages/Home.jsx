@@ -18,6 +18,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SliderLib from "react-slick";
+import { Link } from "react-router";
 
 const Home = () => {
   var settings = {
@@ -28,7 +29,7 @@ const Home = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    cssEase: "linear"
+    cssEase: "linear",
   };
 
   const Slider = SliderLib.default ? SliderLib.default : SliderLib;
@@ -182,18 +183,26 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="mt-20 flex items-center justify-between flex-wrap">
-            {
-              products.filter((item) => item.discount).map((item) => (
+          <div className="flex justify-between items-center mt-8">
+            {products
+              .filter((item) => item.bestProduct === "best")
+              .map((item) => (
                 <div key={item.id}>
-                  <Card isDiscount='true' discount={`${item.discount}%`} productImg={item.image} productName={item.name} newProductPrice={`$${item.price - (item.price * (item.discount / 100)).toFixed(2)}`} productPrice={`$${item.price}`} rating={item.rating} />
+                  <Card
+                    productImg={item.image}
+                    productName={item.name}
+                    newProductPrice={`$${item.price - (item.price * (item.discount / 100)).toFixed(2)}`}
+                    productPrice={`$${item.price}`}
+                    rating={item.rating}
+                  />
                 </div>
-              ))
-            }
+              ))}
           </div>
 
           <div className="flex justify-center mt-10">
-            <CommonButton text="View All Products" />
+            <Link to={"/products"}>
+              <CommonButton text="View All Products" />
+            </Link>
           </div>
         </section>
 
@@ -261,14 +270,23 @@ const Home = () => {
               />
               <CommonButton text={"View All"} />
             </div>
-            <div className="flex justify-between items-center">
-              {
-                products.filter((item) => item.bestProduct === 'best').map((item)=> (
+
+            <div className="flex items-center justify-between flex-wrap">
+              {products
+                .filter((item) => item.discount)
+                .map((item) => (
                   <div key={item.id}>
-                    <Card productImg={item.image} productName={item.name} newProductPrice={`$${item.price - (item.price * (item.discount / 100)).toFixed(2)}`} productPrice={`$${item.price}`} rating={item.rating} />
+                    <Card
+                      isDiscount="true"
+                      discount={`${item.discount}%`}
+                      productImg={item.image}
+                      productName={item.name}
+                      newProductPrice={`$${item.price - (item.price * (item.discount / 100)).toFixed(2)}`}
+                      productPrice={`$${item.price}`}
+                      rating={item.rating}
+                    />
                   </div>
-                ))
-              }
+                ))}
             </div>
           </div>
 
@@ -293,14 +311,20 @@ const Home = () => {
               </IconButton>
             </div>
           </div>
-          <div className="flex justify-between items-center flex-wrap gap-y-16 mt-16">
-            {
-              products.filter((item) => item.discount).map((item) => (
+          <div className="flex justify-between items-center mt-8">
+            {products
+              .filter((item) => item.bestProduct === "best")
+              .map((item) => (
                 <div key={item.id}>
-                  <Card productImg={item.image} productName={item.name} newProductPrice={`$${item.price - (item.price * (item.discount / 100)).toFixed(2)}`} productPrice={`$${item.price}`} rating={item.rating} />
+                  <Card
+                    productImg={item.image}
+                    productName={item.name}
+                    newProductPrice={`$${item.price - (item.price * (item.discount / 100)).toFixed(2)}`}
+                    productPrice={`$${item.price}`}
+                    rating={item.rating}
+                  />
                 </div>
-              ))
-            }
+              ))}
           </div>
 
           <div className="flex justify-center items-center mt-12">

@@ -5,6 +5,8 @@ import RootLayout from './layout/RootLayout'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import Products from './pages/Products'
+import WishList from './pages/WishList'
+import ShopingCart from './pages/ShopingCart'
 
 const App = () => {
 
@@ -15,6 +17,8 @@ const App = () => {
         <Route path='login' element={<Login />} />
         <Route path='signup' element={<SignUp />} />
         <Route path='products' element={<Products />} />
+        <Route path='wishlist' element={<WishList />} />
+        <Route path='cart' element={<ShopingCart />} />
       </Route>
     )
   )

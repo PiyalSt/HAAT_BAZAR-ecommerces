@@ -3,9 +3,14 @@ import assets from '../assets/assets'
 import { TextField } from '@mui/material'
 import CommonButton from '../components/CommonButton'
 import { toast, ToastContainer } from 'react-toastify'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
+
+    const auth = getAuth();
+
+    const navigate = useNavigate()
 
     const [email, setEmail] = useState('')
     const [emailError, setEmailError] = useState(false)
@@ -24,7 +29,23 @@ const Login = () => {
             return
         }
 
-        toast.success('Login Successfully')
+        
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            toast.success('Login Successfully')
+            setInterval(() => {
+                navigate('/home')
+            }, 2000);
+            // ...
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            toast.error(errorCode)
+        });
     }
 
   return (

@@ -5,8 +5,12 @@ import CommonButton from '../components/CommonButton'
 import { FcGoogle } from 'react-icons/fc'
 import { toast, ToastContainer } from 'react-toastify'
 import { Link } from 'react-router'
+// import useAuth from '../hooks/useAuth'
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const SignUp = () => {
+
+    const auth = getAuth();
 
     const [name, setName] = useState('')
     const [nameError, setNameError] = useState(false)
@@ -16,6 +20,9 @@ const SignUp = () => {
     const [passwordError, setPasswordError] = useState(false)
 
     const handleSignup = () => {
+
+        
+
         if(!name) {
             toast.error('Please enter your name')
             setNameError(true)
@@ -31,7 +38,40 @@ const SignUp = () => {
             setPasswordError(true)
             return
         }
-        toast.success('Create your account Successfully')
+
+        // const { createUser } = useAuth;
+        // try {
+        //     const result = createUser(
+        //         email,
+        //         password
+        //     )
+
+        //     console.log(result.user);
+        // } catch (error) {
+        //     console.log(error.message);
+
+        // }
+
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed up 
+            // const user = userCredential.user;
+            // console.log(userCredential);
+            toast.success('Create your account Successfully')
+            
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            if(errorCode === errorCode || errorMessage === errorMessage) {
+                toast.error(errorCode || errorMessage)
+            }
+
+            console.log(errorCode);
+            console.log(errorMessage);
+            
+        });
     }
 
   return (
